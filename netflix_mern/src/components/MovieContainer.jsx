@@ -10,7 +10,7 @@ const MovieContainer = () => {
 
   return (
     <div className='bg-black text-white'>
-      <div className='-mt-72 relative z-10'>
+      <div className='-mt-52 relative z-10'>
         <div className='mb-4'>
         <MovieList title={"Popular Movie"} movies={movie.popularMovie}/>
         </div>
