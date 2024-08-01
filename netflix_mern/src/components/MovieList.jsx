@@ -7,7 +7,7 @@ const MovieList = ({title, movies, searchMovie= false}) => {
 
   return (
     <div className='px-8'>
-      <h1 className={`${searchMovie ? "text-black" : "text-white"}py-3 text-3xl`}>{title}</h1>
+      <h1 className={`${searchMovie ? "text-white" : "text-white"}py-3 text-3xl text-white`}>{title}</h1>
       <div className='w-[100vw] flex overflow-x-auto no-scrollbar cursor-pointer'>
         <div className='flex items-center'>
           {movieArray.map((movie) => {

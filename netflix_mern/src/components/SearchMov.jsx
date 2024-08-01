@@ -34,7 +34,9 @@ const SearchMov = () => {
 
   return (
     <>
-      <div className="flex justify-center pt-[10%] w-[100%]">
+    <div className="bg-black w-[100%] opacity-95 h-[860px]">
+      <img className="absolute -z-10 opacity-50" src="bg.jpg" alt="" />
+    <div className="relative z-50 flex justify-center pt-[10%] w-[100%]">
         <form onSubmit={submitHandler} className="w-[50%]">
           <div className="flex justify-between shadow-md border-gray-200 rounded-lg w-[100%]">
             <input
@@ -53,9 +55,11 @@ const SearchMov = () => {
         </form>
       </div>
       {
-        searchedMovie ? (   <MovieList title={movieName} movies={searchedMovie} searchMovie={true}/>) : (<h1>Movie Not Found!</h1>)
+        searchedMovie ? (  <MovieList title={movieName} movies={searchedMovie} searchMovie={true}/>) : (<h1>Movie Not Found!</h1>)
       }
    
+    </div>
+     
 
     </>
   );

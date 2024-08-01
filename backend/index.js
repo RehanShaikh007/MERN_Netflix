@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: 'https://mern-netflix-psi.vercel.app',
+    origin: 'https://mern-netflix-psi.vercel.app/',
     credentials: true
 }
 
