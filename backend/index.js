@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: ['https://fullstack-netlfix-clone.vercel.app','http://localhost:5173'],
+    origin: ['https://mern-netflix-psi.vercel.app','http://localhost:5173'],
     credentials: true
 }
 
