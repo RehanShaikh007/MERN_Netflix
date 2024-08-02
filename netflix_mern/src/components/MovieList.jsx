@@ -12,7 +12,7 @@ const MovieList = ({title, movies, searchMovie= false}) => {
         <div className='flex items-center'>
           {movieArray.map((movie) => {
               return(
-            <MovieCard key={movie.id} posterPath={movie.poster_path}  className="w-48 p-2 flex-none"/>
+            <MovieCard movieId= {movie.id} key={movie.id} posterPath={movie.poster_path}  className="w-48 p-2 flex-none"/>
             );
             })
           } 
