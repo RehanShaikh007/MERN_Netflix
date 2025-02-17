@@ -86,36 +86,73 @@ const Login = () => {
     }
 
   return (
-    <div>
-        <Header/>
-        {
-        isLoading && <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-        <img className="w-20px rounded-md" src={netflix_spinner} alt="loading-spinner"/>
-      </div>
-      }
-         <div className='absolute'>
-            <img className='w-[100vw] h-[100vh] bg-cover' src="bg.jpg" alt="banner" />
-         </div>
-         <form onSubmit={getInputData} className='absolute flex items-center justify-center w-3/12 mx-auto flex-col my-36 left-0 right-0 bg-black p-12 opacity-90 rounded-md'>
-         <h1 className='text-white text-3xl mb-5 font-bold'>{isLogin ? "Login" : "Sign Up"}</h1>
-            <div className='flex flex-col'>
-                {
-                    !isLogin &&  <label className='text-gray-400'>Full Name</label>
-                }
-                
-                {
-                    !isLogin &&  <input className='outline-none p-3 my-2 rounded-md bg-gray-600 text-white' type="text" value={fullName} onChange={(e)=>setFullName(e.target.value)}/>
-                } 
-               
-                <label className='text-gray-400'>Email</label>
-                <input type="email"  value={email}className='outline-none p-3 my-2 rounded-md bg-gray-600 text-white' onChange={(e)=>setEmail(e.target.value)}/>
-                <label className='text-gray-400'>Password</label>
-                <input type="password" value={password} className='outline-none p-3 my-2 rounded-md bg-gray-600 text-white' onChange={(e)=>setPassword(e.target.value)}/>
-                <button type='submit' className='bg-red-800 mt-6 p-3 text-white rounded-md font-bold mb-4'>{`${isLoading ? "Loading..." : (isLogin ? "Login" : "SignUp")}`}</button>
-                <p className='text-white'>{isLogin ?  "New To Netflix?" : "Already Have An Account?"} <span onClick={loginHandler} className='ml-1 font-medium text-red-500 cursor-pointer'>{isLogin ? "SignUp" : "Login"} </span></p>
-            </div>
-         </form>
-    </div>
+   <div className="relative w-full h-screen flex flex-col items-center">
+   {/* Header */}
+   <Header />
+
+   {/* Loading Spinner */}
+   {isLoading && (
+     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+       <img className="w-[20em] rounded-md" src={netflix_spinner} alt="loading-spinner" />
+     </div>
+   )}
+
+   {/* Background Image */}
+   <div className="absolute inset-0">
+     <img className="w-[100vw] h-[100vh] object-cover" src="bg.jpg" alt="banner" />
+   </div>
+
+   {/* Auth Form */}
+   <form
+     onSubmit={getInputData}
+     className="flex flex-col items-center justify-center w-full max-w-md sm:w-11/12 md:w-3/12 bg-black p-5 sm:p-3 md:p-6 opacity-90 rounded-md m-auto"
+   >
+     <h1 className="text-white text-3xl mb-5 font-bold">{isLogin ? "Login" : "Sign Up"}</h1>
+     <div className="flex flex-col w-full">
+       {!isLogin && (
+         <>
+           <label className="text-gray-400">Full Name</label>
+           <input
+             className="outline-none p-3 my-2 rounded-md bg-gray-600 text-white"
+             type="text"
+             value={fullName}
+             onChange={(e) => setFullName(e.target.value)}
+           />
+         </>
+       )}
+
+       <label className="text-gray-400">Email</label>
+       <input
+         type="email"
+         value={email}
+         className="outline-none p-3 my-2 rounded-md bg-gray-600 text-white"
+         onChange={(e) => setEmail(e.target.value)}
+       />
+
+       <label className="text-gray-400">Password</label>
+       <input
+         type="password"
+         value={password}
+         className="outline-none p-3 my-2 rounded-md bg-gray-600 text-white"
+         onChange={(e) => setPassword(e.target.value)}
+       />
+
+       <button
+         type="submit"
+         className="bg-red-800 mt-6 p-3 text-white rounded-md font-bold mb-4"
+       >
+         {isLoading ? "Loading..." : isLogin ? "Login" : "Sign Up"}
+       </button>
+
+       <p className="text-white text-center">
+         {isLogin ? "New To Netflix?" : "Already Have An Account?"}{" "}
+         <span onClick={loginHandler} className="ml-1 font-medium text-red-500 cursor-pointer">
+           {isLogin ? "Sign Up" : "Login"}
+         </span>
+       </p>
+     </div>
+   </form>
+ </div>
   )
 }
 
