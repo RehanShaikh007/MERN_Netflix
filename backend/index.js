@@ -13,6 +13,8 @@ dotenv.config({
 
 databaseConnection();
 
+const __dirname = path.resolve();
+
 
 const app = express();
 app.use(express.urlencoded({extended: true}));
@@ -20,11 +22,17 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: ['https://mern-netflix-psi.vercel.app','http://localhost:5173'],
+    origin: ['http://localhost:5173'],
     credentials: true
 }
 
 app.use(cors(corsOptions));
+
+app.use(express.static(path.join(__dirname, '/netflix_mern/dist')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'netflix_mern', 'dist', 'index.html'));
+})
 
 
 app.use("/api/v1/user", userRoute);
