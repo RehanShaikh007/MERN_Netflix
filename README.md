@@ -216,5 +216,4 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 ## Credits
 **NETFLIX:** The original NETFLIX platform that inspired this project. Visit **[NETFLIX](https://www.netflix.com/in/)** for more Movie Experience.
-## Live Demo
-**[https://github.com/RehanShaikh007/MERN_Netflix](https://mern-netflix-psi.vercel.app/)**
+
