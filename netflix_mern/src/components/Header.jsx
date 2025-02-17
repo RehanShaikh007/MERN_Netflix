@@ -38,9 +38,12 @@ const Header = () => {
 
     {/* User Section */}
     {user ? (
-      <div className="hidden md:flex items-center space-x-4">
+      <div className="flex items-center">
+        <div className="flex items-center gap-1">
         <IoIosArrowDropdown color="white" size="24px" />
         <h1 className="text-lg font-medium text-white">{user.fullName}</h1>
+        </div>
+     
         <div className="ml-4 flex space-x-2">
           <button className="bg-red-800 text-white px-4 py-2 rounded-sm" onClick={logoutHandler}>
             Logout
